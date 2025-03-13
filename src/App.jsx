@@ -12,13 +12,13 @@ function App() {
 
   const handleEncrypt = async () => {
     setLoading(true);
-    setDecryptedText(""); // Explicitly clear the decrypted text
-    setEncryptedText(""); // Reset encrypted text to avoid UI flicker
+    setDecryptedText("");
+    setEncryptedText("");
     
     try {
       const response = await axios.post(
         `${BASE_URL}/encrypt`,
-        inputText, // Sending raw text
+        inputText,
         { headers: { "Content-Type": "text/plain" } }
       );
       setEncryptedText(response.data);
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
-      <h2>React Encryption App</h2>
+      <h2>Honeywell Encryption App</h2>
       <img src={honeywellLogo} alt="Honeywell Logo" style={{ 
     width: "100px", 
     display: "block", 
