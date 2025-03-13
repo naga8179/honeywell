@@ -12,6 +12,9 @@ function App() {
 
   const handleEncrypt = async () => {
     setLoading(true);
+    setDecryptedText(""); // Explicitly clear the decrypted text
+    setEncryptedText(""); // Reset encrypted text to avoid UI flicker
+    
     try {
       const response = await axios.post(
         `${BASE_URL}/encrypt`,
@@ -22,8 +25,10 @@ function App() {
     } catch (error) {
       alert("Error encrypting text: " + (error.response?.data || error.message));
     }
+    
     setLoading(false);
   };
+  
 
   const handleDecrypt = async () => {
     setLoading(true);
@@ -84,6 +89,8 @@ function App() {
     wordWrap: "break-word",  // Allows text to wrap
     whiteSpace: "pre-wrap"  // Maintains formatting
   }}>
+
+    
     <h3>Encrypted Text:</h3>
     <p style={{ 
       display: "block", 
@@ -98,7 +105,8 @@ function App() {
     </button>
   </div>
 )}
-
+<br />
+<br />
 
 
       {decryptedText && (
