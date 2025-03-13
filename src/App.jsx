@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Clipboard } from "lucide-react";
+import honeywellLogo from "./assets/Honeywell-Symbol.png";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -47,6 +48,11 @@ function App() {
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
       <h2>React Encryption App</h2>
+      <img src={honeywellLogo} alt="Honeywell Logo" style={{ 
+    width: "100px", 
+    display: "block", 
+    margin: "0 auto 10px" 
+  }}  />
 
       <input
         type="text"
@@ -64,16 +70,37 @@ function App() {
         Decrypt
       </button>
 
-      {encryptedText && (
-        <div style={{ marginTop: "20px", padding: "10px", backgroundColor: "#f3f3f3", display: "inline-block", borderRadius: "5px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)" }}>
-          <h3>Encrypted Text:</h3>
-          <p style={{ display: "inline-block", marginRight: "10px" }}>{encryptedText}</p>
-          <button onClick={copyToClipboard} style={{ background: "none", border: "none", cursor: "pointer" }}>
-            <Clipboard size={20} />
-          </button>
-        </div>
-      )}
+<br />
+<br />
+{encryptedText && (
+  <div style={{ 
+    marginTop: "20px", 
+    padding: "10px", 
+    backgroundColor: "#f3f3f3", 
+    display: "inline-block", 
+    borderRadius: "5px", 
+    boxShadow: "0px 0px 10px rgba(0,0,0,0.1)", 
+    maxWidth: "400px",  // Restricts width
+    wordWrap: "break-word",  // Allows text to wrap
+    whiteSpace: "pre-wrap"  // Maintains formatting
+  }}>
+    <h3>Encrypted Text:</h3>
+    <p style={{ 
+      display: "block", 
+      marginBottom: "10px", 
+      wordWrap: "break-word", 
+      whiteSpace: "pre-wrap"  // Ensures it breaks into multiple lines
+    }}>
+      {encryptedText}
+    </p>
+    <button onClick={copyToClipboard} style={{ background: "none", border: "none", cursor: "pointer" }}>
+      <Clipboard size={20} />
+    </button>
+  </div>
+)}
 
+
+<br />
       {decryptedText && (
         <div style={{ marginTop: "20px", padding: "10px", backgroundColor: "#e3ffe3", display: "inline-block", borderRadius: "5px", boxShadow: "0px 0px 10px rgba(0,0,0,0.1)" }}>
           <h3>Decrypted Text:</h3>
