@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
-      <h2>React Encryption App</h2>
+      <h2>Honeywell Encryption App</h2>
 
       <input
         type="text"
