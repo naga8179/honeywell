@@ -47,12 +47,16 @@ function App() {
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
+<<<<<<< HEAD
       <h2>React Encryption App</h2>
       <img src={honeywellLogo} alt="Honeywell Logo" style={{ 
     width: "100px", 
     display: "block", 
     margin: "0 auto 10px" 
   }}  />
+=======
+      <h2>Honeywell Encryption App</h2>
+>>>>>>> 9e1cdd27a12808cc8ad86116733a25a738f63882
 
       <input
         type="text"
